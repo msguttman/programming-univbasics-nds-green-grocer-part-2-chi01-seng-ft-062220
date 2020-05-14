@@ -1,23 +1,30 @@
 require_relative './part_1_solution.rb'
 
 
-
-
 def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  return_cart = cart
   coupons.each do |coupon_item|
-    return_cart.each do |cart_item|
+    cart.each do |cart_item|
       if cart_item[:item] == coupon_item[:item]
         if cart_item[:count] >= coupon_item[:num]
-          return_cart[cart_item][:count] -= coupon_item[:num]
-          return_cart[return_cart.length] = return_cart[:item] + " W/COUPON"
+          a = cart.length
+          cart_item[:count] -= coupon_item[:num]
+          puts a
+          cart[a] = {
+            :item => cart_item[:item] + " W/COUPON",
+            :price => coupon_item[:cost] / coupon_item[:num],
+            :clearance => true,
+            :count => coupon_item[:num]
+            }
         end
       end
-      
+    end
+  end
+  cart      
 end
+
 
 def apply_clearance(cart)
   # Consult README for inputs and outputs
