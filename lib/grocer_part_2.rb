@@ -30,6 +30,10 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  cart.each do |grocery_item|
+    if grocery_item[:clearance] == TRUE
+      grocery
+  
 end
 
 def checkout(cart, coupons)
