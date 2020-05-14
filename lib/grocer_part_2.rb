@@ -31,7 +31,7 @@ def apply_clearance(cart)
   #
   # REMEMBER: This method **should** update cart
   cart.each do |grocery_item|
-    if grocery_item[:clearance] == TRUE
+    if grocery_item[:clearance] == true
        new_price = grocery_item[:price] * 0.80
        grocery_item[:price] = new_price.round(2)
     end
