@@ -1,9 +1,13 @@
 require_relative './part_1_solution.rb'
 
+
+
+
 def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  
 end
 
 def apply_clearance(cart)
@@ -25,7 +29,6 @@ def checkout(cart, coupons)
 end
 
 
-=begin
 
 def find_item_by_name_in_collection(name, collection)
   index = 0
