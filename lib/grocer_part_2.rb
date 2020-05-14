@@ -7,8 +7,16 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  coupons.each do |grocery_item|
-    
+  return_cart = cart
+  coupons.each do |coupon_item|
+    return_cart.each do |cart_item|
+      if cart_item[:item] == coupon_item[:item]
+        if cart_item[:count] >= coupon_item[:num]
+          return_cart[cart_item][:count] -= coupon_item[:num]
+          return_cart[return_cart.length] = return_cart[:item] + " W/COUPON"
+        end
+      end
+      
 end
 
 def apply_clearance(cart)
